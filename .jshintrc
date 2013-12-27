@@ -15,6 +15,9 @@
 	"strict": true,
 	"trailing": true,
 	"smarttabs": true,
+	"noempty": true,
+	"nonew": true,
+	"eqnull": true,
 
 	"globals": {
 		"jQuery": true,
