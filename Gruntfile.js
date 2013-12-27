@@ -1,8 +1,19 @@
+'use strict';
+
 module.exports = function(grunt) {
 
 	// Config
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		// jsHint
+		jshint: {
+			options: {
+				reporter: require('jshint-stylish'),
+				jshintrc: '.jshintrc'
+			},
+			files: ['Gruntfile.js', 'src/js/*.js']
+		},
 
 		// concat
 		concat: {
@@ -65,7 +76,14 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: ['src/js/*.js'],
-				tasks: ['concat', 'uglify'],
+				tasks: ['jshint', 'concat', 'uglify'],
+				options: {
+					spawn: false,
+				},
+			},
+			gruntfile: {
+				files: ['Gruntfile.js'],
+				tasks: ['jshint'],
 				options: {
 					spawn: false,
 				},
@@ -100,8 +118,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	// Define tasks.
-	grunt.registerTask('default', ['less', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['less', 'concat', 'uglify', 'imagemin', 'jshint']);
 
 };
