@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
     <link rel="stylesheet" href="dist/css/main.min.css">
 
     <title>Webmontag Kassel</title>
@@ -104,6 +98,11 @@ function mce_preload_check(){
         setTimeout('mce_preload_check();', 250);
         return;
     }
+    var locale = document.createElement('script');
+    locale.type = 'text/javascript';
+    locale.src = 'https://raw.github.com/jzaefferer/jquery-validation/1.11.1/localization/messages_de.js';
+    head.appendChild(locale);
+
     mce_init_form();
 }
 function mce_init_form(){
@@ -167,26 +166,7 @@ function mce_init_form(){
                     success: mce_success_cb
                 };
       $('#mc-embedded-subscribe-form').ajaxForm(options);
-      /*
- * Translated default messages for the jQuery validation plugin.
- * Locale: DE
- */
-jQuery.extend(jQuery.validator.messages, {
-	required: "Dieses Feld ist ein Pflichtfeld.",
-	maxlength: jQuery.validator.format("Geben Sie bitte maximal {0} Zeichen ein."),
-	minlength: jQuery.validator.format("Geben Sie bitte mindestens {0} Zeichen ein."),
-	rangelength: jQuery.validator.format("Geben Sie bitte mindestens {0} und maximal {1} Zeichen ein."),
-	email: "Geben Sie bitte eine gültige E-Mail Adresse ein.",
-	url: "Geben Sie bitte eine gültige URL ein.",
-	date: "Bitte geben Sie ein gültiges Datum ein.",
-	number: "Geben Sie bitte eine Nummer ein.",
-	digits: "Geben Sie bitte nur Ziffern ein.",
-	equalTo: "Bitte denselben Wert wiederholen.",
-	range: jQuery.validator.format("Geben Sie bitten einen Wert zwischen {0} und {1}."),
-	max: jQuery.validator.format("Geben Sie bitte einen Wert kleiner oder gleich {0} ein."),
-	min: jQuery.validator.format("Geben Sie bitte einen Wert größer oder gleich {0} ein."),
-	creditcard: "Geben Sie bitte ein gültige Kreditkarten-Nummer ein."
-});
+
 
     });
 }
@@ -254,7 +234,6 @@ function mce_success_cb(resp){
         }
     }
 }
-
 </script>
 <!--End mc_embed_signup-->
 </body>
