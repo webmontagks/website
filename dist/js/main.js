@@ -12,6 +12,15 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
 /**
  * Init for magnific popup.
  */
-$(document).ready(function() {
-	$('.image-link').magnificPopup({type:'image'});
+$(function() {
+	'use strict';
+	console.log('domready');
+	$('.popup').magnificPopup({
+		type: 'ajax',
+		callbacks: {
+			close: function() {
+				$('#validate, #locale').remove();
+			}
+		}
+	});
 });

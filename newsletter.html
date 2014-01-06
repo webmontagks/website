@@ -1,13 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="dist/css/main.min.css">
-
-    <title>Webmontag Kassel</title>
-</head>
-<body>
+<div class="modalWindow">
 <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
 <form action="http://webmontag-kassel.us3.list-manage1.com/subscribe/post?u=fd8e8858d8b53833e647b6b7d&amp;id=a2245737fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -18,7 +9,6 @@
     <p>
         Deine E-Mail Adresse wird nur für den Newsletter genutzt und nicht weitergegeben.
     </p>
-<div class="indicates-required"><span class="asterisk">*</span> Pflichtfelder</div>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">E-Mail Adresse  <span class="asterisk">*</span>
 </label>
@@ -37,7 +27,8 @@
 		<div class="response" id="mce-success-response" style="display:none"></div>
 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;"><input type="text" name="b_fd8e8858d8b53833e647b6b7d_a2245737fa" value=""></div>
-	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+	<div class="indicates-required"><span class="asterisk">*</span> Pflichtfelder</div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 </form>
 </div>
 <script type="text/javascript">
@@ -91,6 +82,7 @@ function mce_preload_check(){
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+    script.id = 'validate';
     head.appendChild(script);
     try {
         var validatorLoaded=jQuery("#fake-form").validate({});
@@ -101,6 +93,7 @@ function mce_preload_check(){
     var locale = document.createElement('script');
     locale.type = 'text/javascript';
     locale.src = 'https://raw.github.com/jzaefferer/jquery-validation/1.11.1/localization/messages_de.js';
+    locale.id = 'locale';
     head.appendChild(locale);
 
     mce_init_form();
@@ -236,5 +229,4 @@ function mce_success_cb(resp){
 }
 </script>
 <!--End mc_embed_signup-->
-</body>
-</html>
+</div>

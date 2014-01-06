@@ -1,7 +1,15 @@
 /**
  * Init for magnific popup.
  */
-$(document).ready(function() {
+$(function() {
 	'use strict';
-	$('.image-link').magnificPopup({type:'image'});
+	console.log('domready');
+	$('.popup').magnificPopup({
+		type: 'ajax',
+		callbacks: {
+			close: function() {
+				$('#validate, #locale').remove();
+			}
+		}
+	});
 });
