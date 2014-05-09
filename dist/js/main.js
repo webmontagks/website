@@ -14,9 +14,9 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
  */
 $(function() {
 	'use strict';
-	console.log('domready');
 	$('.popup').magnificPopup({
 		type: 'ajax',
+		enableEscapeKey: false,
 		callbacks: {
 			close: function() {
 				$('#validate, #locale').remove();
