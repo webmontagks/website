@@ -364,6 +364,9 @@ table {
 .icon-twitter:before {
   content: "\e609";
 }
+.icon-facebook:before {
+  content: "\e602";
+}
 /* MailChimp Form Embed Code - Classic - 08/17/2011 */
 #mc_embed_signup {
   background: #fff;
@@ -1023,6 +1026,12 @@ ul a {
 }
 .icon-flattr:hover {
   color: #ec8e24;
+}
+.icon-facebook {
+  color: #6d84b4;
+}
+.icon-facebook:hover {
+  color: #4c66a4;
 }
 .mfp-bg {
   background: #777777;
