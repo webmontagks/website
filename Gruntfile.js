@@ -69,6 +69,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		copy: {
+			main: {
+				files: [
+					{ expand: true, flatten: true, src: ['src/fonts/*'], dest: 'dist/fonts', filter: 'isFile'}
+				]
+			}
+		},
+
 		// watch
 		watch: {
 			options: {
@@ -120,8 +128,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-notify');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Define tasks.
-	grunt.registerTask('default', ['less', 'concat', 'uglify', 'imagemin', 'jshint']);
+	grunt.registerTask('default', ['copy', 'less', 'concat', 'uglify', 'imagemin', 'jshint']);
 
 };
