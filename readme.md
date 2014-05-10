@@ -31,8 +31,7 @@ managed by Bower.
 ## Creating a Build
 
 Please use [Grunt.js](https://github.com/gruntjs/grunt) for building a
-production-state of a website. The `Gruntfile.js` has tasks for concatenating
-and minifing CSS and JavaScript.
+production-state of the website. The `Gruntfile.js` has tasks for concatenating and minifing CSS and JavaScript.
 
 Just run 
 
