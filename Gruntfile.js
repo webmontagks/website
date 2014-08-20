@@ -5,6 +5,9 @@ module.exports = function(grunt) {
 	// Measure time of task execution
 	require('time-grunt')(grunt);
 
+	// Load tasks
+	require('jit-grunt')(grunt);
+
 	// Config
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -122,16 +125,6 @@ module.exports = function(grunt) {
 		}
 
 	});
-
-	// Load plugins.
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-notify');
-	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Define tasks.
 	grunt.registerTask('default', ['copy', 'less', 'concat', 'uglify', 'imagemin', 'jshint']);
