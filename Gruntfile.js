@@ -2,6 +2,9 @@
 
 module.exports = function(grunt) {
 
+	// Measure time of task execution
+	require('time-grunt')(grunt);
+
 	// Config
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
